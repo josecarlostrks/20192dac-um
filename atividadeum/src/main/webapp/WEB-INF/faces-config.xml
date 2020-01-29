@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+    http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+
+
+    <converter>
+        <converter-id>conversor.ConversorDependente</converter-id>
+        <converter-class>br.com.trks.atividade.um.conversor.ConversorDependente</converter-class>
+    </converter>
+    <validator>
+        <validator-id>validador.ValidadorDeDependentes</validator-id>
+        <validator-class>br.com.trks.atividade.um.validador.ValidadorDeDependentes</validator-class>
+    </validator>
+
+</faces-config>

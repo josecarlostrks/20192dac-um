@@ -1,0 +1,36 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                template="template.xhtml">
+                    
+    <ui:define name="centro">
+        <div class="container col s12 m6">
+        <h:form id="formulario">
+          
+        <h1 class="header center teal-text text-lighten-3">Pessoas</h1>
+
+            <h:outputLabel value="Nome: "></h:outputLabel>
+            <h:inputText id="nome" value="#{controladorDePessoas.pessoa.nome}">
+                <f:validateLength maximum="50"></validateLength>
+            </h:inputText>
+            
+            <h:outputLabel value="Dependente: "></h:outputLabel>
+            <h:selectOneMenu value="#{controladorDePessoas.pessoa.dependente}" 
+                             converter="conversor.ConversorDependente"
+                             validator="validador.ValidadorDeDependentes"                             
+                             id="dep">
+                <f:selectItems value="#{controladorDeDependentes.listaDependentes()}"
+                               var="dep" itemLabel="#{dep.nome}" />
+            </h:selectOneMenu>
+            
+            <br></br>             
+            <center>
+                <h:commandButton value="Salvar" action="#{controladorDePessoas.salvarPessoa()}"
+                             class=" center btn-large waves-effect waves-light teal lighten-1"/>               
+            </center>
+
+            <br></br>                
+        </h:form>
+        </div>    
+    </ui:define>
+</ui:composition>
